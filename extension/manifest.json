@@ -1,0 +1,25 @@
+{
+    "name": "Youtube music discord presence",
+    "version": "0.0.0.1",
+    "manifest_version": 3,
+    "description": "Discord presence for Youtube Music",
+    "content_scripts": [{
+        "matches": [
+            "http://*/*",
+            "https://*/*"
+        ],
+        "run_at": "document_idle",
+        "js": [
+            "content_script.js"
+        ]
+    }],
+    "background": {
+        "service_worker": "content.js"
+    },
+    "permissions": [
+        "webRequest"
+    ],
+    "host_permissions": [
+        "https://music.youtube.com/"
+    ]
+}
