@@ -8,11 +8,11 @@ from flask_cors import CORS, cross_origin
 from ytmusicapi import YTMusic
 from pypresence import Presence
 
-client_id = "814934555470987285"
+client_id = ""
 RPC = Presence(client_id=client_id)
 RPC.connect()
 
-ytmusic = YTMusic("headers_auth.json", user="112199800604322947524")
+ytmusic = YTMusic("headers_auth.json", user="")
 
 app = Flask(__name__)
 cors = CORS(app, resources={r"/*": {"origins": "*"}})
