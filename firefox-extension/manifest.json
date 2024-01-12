@@ -16,10 +16,13 @@
         }
     ],
     "background": {
-        "service_worker": "content.js"
+        "scripts": [
+            "content.js"
+        ]
     },
     "permissions": [
-        "webRequest"
+        "webRequest",
+        "webRequestBlocking"
     ],
     "host_permissions": [
         "https://music.youtube.com/"

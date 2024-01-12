@@ -8,11 +8,11 @@ from flask_cors import CORS, cross_origin
 from ytmusicapi import YTMusic
 from pypresence import Presence
 
-client_id = "Insert your discord's app's client id"
+client_id = "814934555470987285"
 RPC = Presence(client_id=client_id)
 RPC.connect()
 
-ytmusic = YTMusic("headers_auth.json")
+ytmusic = YTMusic("headers_auth.json", user="112199800604322947524")
 
 app = Flask(__name__)
 cors = CORS(app, resources={r"/*": {"origins": "*"}})
@@ -22,7 +22,7 @@ stopped = True
 
 
 async def nextSong():
-    await asyncio.sleep(1.5)
+    await asyncio.sleep(2.5)
     try:
         updatePresence()
     except Exception as e:
@@ -66,8 +66,7 @@ def pause():
 @app.route("/resume", methods=["POST"])
 @cross_origin()
 def resume():
-    if stopped:
-        updatePresence()
+    updatePresence()
     return "Presence updated"
 
 

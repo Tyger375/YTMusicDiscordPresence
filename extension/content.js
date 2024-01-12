@@ -1,4 +1,4 @@
-chrome.webRequest.onBeforeRequest.addListener(
+webRequest.onBeforeRequest.addListener(
         function(details) {
             //return {cancel: details.url.indexOf("://music.youtube.com/") != -1};
             let cookies = ""
